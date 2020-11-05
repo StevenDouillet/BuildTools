@@ -14,8 +14,8 @@ public class BuildToolsMenuHandler implements Listener {
     public void onPlayerUse(PlayerInteractEvent event){
         Player player = event.getPlayer();
 
-        if(player.getInventory().getItemInMainHand().getType() == Material.BAMBOO_SAPLING){
-            player.performCommand("/builtools");
+        if(player.getInventory().getItemInMainHand().getType() == Material.CARROT_ON_A_STICK){
+            player.performCommand("bt");
         }
     }
 
@@ -28,24 +28,28 @@ public class BuildToolsMenuHandler implements Listener {
 
                 e.setCancelled(true);
                 Player player = (Player) e.getWhoClicked();
-                final Material currentItem = e.getCurrentItem().getType();
+                Material currentItem = e.getCurrentItem().getType();
 
                 switch(currentItem) {
                     case SHEARS:
-                        player.performCommand("//cut");
+                        player.performCommand("/cut");
                         player.sendMessage(ChatColor.RED + "Cutting in progress ...");
+                        break;
 
                     case YELLOW_DYE:
-                        player.performCommand("//copy");
+                        player.performCommand("/copy");
                         player.sendMessage(ChatColor.YELLOW + "Copying in progress ...");
+                        break;
 
                     case PURPLE_DYE:
-                        player.performCommand("//paste");
+                        player.performCommand("/paste");
                         player.sendMessage(ChatColor.DARK_PURPLE + "Pasting in progress ...");
+                        break;
 
-                    case WRITTEN_BOOK:
-                        player.performCommand("//undo");
+                    case COBWEB:
+                        player.performCommand("/undo");
                         player.sendMessage(ChatColor.GREEN + "Undoing in progress ...");
+                        break;
                 }
 
                 player.closeInventory();
