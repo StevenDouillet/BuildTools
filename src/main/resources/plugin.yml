@@ -1,0 +1,11 @@
+name: BuildTools
+version: ${project.version}
+main: fr.stevend.buildtools.BuildTools
+api-version: 1.16
+authors: [stevend]
+description: A simple plugin that help you to execute build commands (world edit and others ...)
+commands:
+  bt:
+    description: Open the buildtools home menu
+  buildtools:
+    description: Open the buildtools home menu
